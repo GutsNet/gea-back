@@ -1,0 +1,4 @@
+-r base.txt
+
+# MariaDB driver
+mysqlclient>=2.2,<3.0
