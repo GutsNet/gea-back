@@ -116,7 +116,7 @@ class Arbol(TimestampMixin, models.Model):
     nivel_infestacion = models.FloatField(
         "Nivel de infestación",
         default=0.0,
-        help_text="Porcentaje ponderado promedio de infestación global del último censo.",
+        help_text="Suma de los tres niveles Hawksworth del último censo. Rango válido: 0.0 a 7.5.",
     )
     estado = models.CharField(
         "Estado",

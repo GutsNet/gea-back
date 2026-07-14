@@ -8,6 +8,7 @@ para un árbol, y un administrativo lo valida o rechaza.
 import uuid
 
 from django.conf import settings
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
 
@@ -43,15 +44,18 @@ class Reporte(models.Model):
     )
     n1 = models.FloatField(
         "Nivel 1 (Hawksworth)",
-        help_text="Medición Hawksworth — componente 1.",
+        help_text="Medición Hawksworth — componente 1. Rango válido: 0.0 a 2.5.",
+        validators=[MinValueValidator(0.0), MaxValueValidator(2.5)],
     )
     n2 = models.FloatField(
         "Nivel 2 (Hawksworth)",
-        help_text="Medición Hawksworth — componente 2.",
+        help_text="Medición Hawksworth — componente 2. Rango válido: 0.0 a 2.5.",
+        validators=[MinValueValidator(0.0), MaxValueValidator(2.5)],
     )
     n3 = models.FloatField(
         "Nivel 3 (Hawksworth)",
-        help_text="Medición Hawksworth — componente 3.",
+        help_text="Medición Hawksworth — componente 3. Rango válido: 0.0 a 2.5.",
+        validators=[MinValueValidator(0.0), MaxValueValidator(2.5)],
     )
     status_reporte = models.CharField(
         "Estatus del reporte",
@@ -80,5 +84,5 @@ class Reporte(models.Model):
 
     @property
     def nivel_infestacion_promedio(self):
-        """Calcula el promedio de los 3 componentes Hawksworth."""
-        return round((self.n1 + self.n2 + self.n3) / 3, 2)
+        """Calcula la suma de los 3 componentes Hawksworth (máximo 7.5)."""
+        return round(self.n1 + self.n2 + self.n3, 2)
