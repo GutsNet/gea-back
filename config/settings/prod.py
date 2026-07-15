@@ -1,4 +1,10 @@
 """
+G.E.A. Backend
+Autor: Gael Landa
+Proyecto: G.E.A. (Gestión Ecológica Arbórea)
+"""
+
+"""
 Django production settings for G.E.A. backend.
 
 Usa MariaDB y configuraciones de seguridad estrictas.

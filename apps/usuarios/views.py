@@ -1,3 +1,9 @@
+"""
+G.E.A. Backend
+Autor: Gael Landa
+Proyecto: G.E.A. (Gestión Ecológica Arbórea)
+"""
+
 """Views del módulo de usuarios y autenticación."""
 
 from rest_framework import generics, status, viewsets

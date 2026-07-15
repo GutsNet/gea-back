@@ -1,3 +1,9 @@
+"""
+G.E.A. Backend
+Autor: Gael Landa
+Proyecto: G.E.A. (Gestión Ecológica Arbórea)
+"""
+
 """Serializers para el módulo de usuarios y autenticación."""
 
 from django.contrib.auth import authenticate

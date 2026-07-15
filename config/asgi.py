@@ -1,3 +1,9 @@
+"""
+G.E.A. Backend
+Autor: Gael Landa
+Proyecto: G.E.A. (Gestión Ecológica Arbórea)
+"""
+
 """ASGI config for G.E.A. backend."""
 
 import os

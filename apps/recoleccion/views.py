@@ -1,3 +1,9 @@
+"""
+G.E.A. Backend
+Autor: Gael Landa
+Proyecto: G.E.A. (Gestión Ecológica Arbórea)
+"""
+
 """Views del módulo de recolección."""
 
 from rest_framework import viewsets

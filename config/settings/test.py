@@ -1,4 +1,10 @@
 """
+G.E.A. Backend
+Autor: Gael Landa
+Proyecto: G.E.A. (Gestión Ecológica Arbórea)
+"""
+
+"""
 Django test settings for G.E.A. backend.
 
 SQLite in-memory + password hasher rápido para tests veloces.

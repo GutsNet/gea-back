@@ -7,7 +7,7 @@ Proyecto: G.E.A. (Gestión Ecológica Arbórea)
 from django.apps import AppConfig
 
 
-class RecoleccionConfig(AppConfig):
+class SolicitudesConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "apps.recoleccion"
-    verbose_name = "Recolección"
+    name = "apps.solicitudes"
+    verbose_name = "Solicitudes"

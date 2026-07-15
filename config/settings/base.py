@@ -1,4 +1,10 @@
 """
+G.E.A. Backend
+Autor: Gael Landa
+Proyecto: G.E.A. (Gestión Ecológica Arbórea)
+"""
+
+"""
 Django base settings for G.E.A. backend.
 
 Settings compartidos entre todos los ambientes.
@@ -45,6 +51,7 @@ LOCAL_APPS = [
     "apps.arboles",
     "apps.reportes",
     "apps.recoleccion",
+    "apps.solicitudes",
     "apps.dashboard",
 ]
 

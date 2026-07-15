@@ -1,4 +1,10 @@
 """
+G.E.A. Backend
+Autor: Gael Landa
+Proyecto: G.E.A. (Gestión Ecológica Arbórea)
+"""
+
+"""
 URL configuration for G.E.A. backend.
 
 API versioning: todos los endpoints bajo /api/v1/
@@ -17,6 +23,7 @@ api_v1_patterns = [
     path("arboles/", include("apps.arboles.urls")),
     path("reportes/", include("apps.reportes.urls")),
     path("recoleccion/", include("apps.recoleccion.urls")),
+    path("solicitudes/", include("apps.solicitudes.urls")),
     path("dashboard/", include("apps.dashboard.urls")),
 ]
 

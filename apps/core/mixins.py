@@ -1,3 +1,9 @@
+"""
+G.E.A. Backend
+Autor: Gael Landa
+Proyecto: G.E.A. (Gestión Ecológica Arbórea)
+"""
+
 """Mixins reutilizables para modelos del proyecto."""
 
 from django.db import models

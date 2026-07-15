@@ -1,3 +1,9 @@
+"""
+G.E.A. Backend
+Autor: Gael Landa
+Proyecto: G.E.A. (Gestión Ecológica Arbórea)
+"""
+
 """Lógica de negocio del módulo de reportes."""
 
 from apps.arboles.services import recalcular_infestacion

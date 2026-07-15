@@ -1,4 +1,10 @@
 """
+G.E.A. Backend
+Autor: Gael Landa
+Proyecto: G.E.A. (Gestión Ecológica Arbórea)
+"""
+
+"""
 Views del dashboard — endpoints agregados para KPIs y visualizaciones.
 
 Estos endpoints alimentan el dashboard del frontend (ApexCharts)

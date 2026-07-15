@@ -1,3 +1,9 @@
+"""
+G.E.A. Backend
+Autor: Gael Landa
+Proyecto: G.E.A. (Gestión Ecológica Arbórea)
+"""
+
 """Serializers del módulo de reportes."""
 
 from rest_framework import serializers
@@ -10,7 +16,7 @@ class ReporteListSerializer(serializers.ModelSerializer):
 
     arbol_etiqueta = serializers.CharField(source="id_arbol.etiqueta", read_only=True)
     responsable_matricula = serializers.CharField(source="responsable.matricula", read_only=True)
-    nivel_promedio = serializers.FloatField(source="nivel_infestacion_promedio", read_only=True)
+    nivel_infestacion = serializers.FloatField(source="nivel_infestacion_promedio", read_only=True)
 
     class Meta:
         model = Reporte
@@ -21,7 +27,7 @@ class ReporteListSerializer(serializers.ModelSerializer):
             "n1",
             "n2",
             "n3",
-            "nivel_promedio",
+            "nivel_infestacion",
             "status_reporte",
             "hora",
             "responsable_matricula",
@@ -33,7 +39,7 @@ class ReporteSerializer(serializers.ModelSerializer):
 
     arbol_etiqueta = serializers.CharField(source="id_arbol.etiqueta", read_only=True)
     responsable_matricula = serializers.CharField(source="responsable.matricula", read_only=True)
-    nivel_promedio = serializers.FloatField(source="nivel_infestacion_promedio", read_only=True)
+    nivel_infestacion = serializers.FloatField(source="nivel_infestacion_promedio", read_only=True)
 
     class Meta:
         model = Reporte
@@ -46,7 +52,7 @@ class ReporteSerializer(serializers.ModelSerializer):
             "n1",
             "n2",
             "n3",
-            "nivel_promedio",
+            "nivel_infestacion",
             "status_reporte",
             "hora",
             "observaciones",

@@ -1,4 +1,10 @@
 """
+G.E.A. Backend
+Autor: Gael Landa
+Proyecto: G.E.A. (Gestión Ecológica Arbórea)
+"""
+
+"""
 Modelos del módulo de árboles.
 
 Catálogo de árboles del campus, especies, ubicaciones (celdas Voronoi)
@@ -87,7 +93,7 @@ class Arbol(TimestampMixin, models.Model):
     """
     Árbol individual registrado en el campus UTTT.
 
-    Cada árbol tiene una etiqueta física (placa metálica), pertenece a una
+    Cada árbol pertenece a una
     especie y está asociado a una celda de Voronoi (Ubicación).
     """
 
@@ -117,7 +123,7 @@ class Arbol(TimestampMixin, models.Model):
     etiqueta = models.CharField(
         "Etiqueta",
         max_length=50,
-        help_text="Código alfanumérico de la placa metálica fijada al tronco.",
+        help_text="Código alfanumérico del árbol.",
     )
     nivel_infestacion = models.FloatField(
         "Nivel de infestación",

@@ -1,4 +1,10 @@
 """
+G.E.A. Backend
+Autor: Gael Landa
+Proyecto: G.E.A. (Gestión Ecológica Arbórea)
+"""
+
+"""
 Django development settings for G.E.A. backend.
 
 Usa SQLite por defecto para desarrollo rápido.

@@ -1,4 +1,10 @@
 """
+G.E.A. Backend
+Autor: Gael Landa
+Proyecto: G.E.A. (Gestión Ecológica Arbórea)
+"""
+
+"""
 Modelos del módulo de reportes de infestación.
 
 Un estudiante registra un reporte con 3 mediciones Hawksworth (n1, n2, n3)

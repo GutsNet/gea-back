@@ -1,4 +1,10 @@
 """
+G.E.A. Backend
+Autor: Gael Landa
+Proyecto: G.E.A. (Gestión Ecológica Arbórea)
+"""
+
+"""
 Modelo de usuario personalizado para G.E.A.
 
 Extiende AbstractUser para agregar matrícula, rol, grupo, cuatrimestre y estatus.

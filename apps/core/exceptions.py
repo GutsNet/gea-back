@@ -1,4 +1,10 @@
 """
+G.E.A. Backend
+Autor: Gael Landa
+Proyecto: G.E.A. (Gestión Ecológica Arbórea)
+"""
+
+"""
 Custom exception handler for DRF.
 
 Formato de respuesta consistente para todos los errores de la API.

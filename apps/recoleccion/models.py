@@ -1,4 +1,10 @@
 """
+G.E.A. Backend
+Autor: Gael Landa
+Proyecto: G.E.A. (Gestión Ecológica Arbórea)
+"""
+
+"""
 Modelos del módulo de recolección de biomasa.
 
 Registra los kg de heno motita recolectados por los estudiantes.
