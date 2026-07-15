@@ -14,8 +14,8 @@ class EspecieAdmin(admin.ModelAdmin):
 
 @admin.register(Ubicacion)
 class UbicacionAdmin(admin.ModelAdmin):
-    list_display = ["id", "coordenadas"]
-    search_fields = ["coordenadas"]
+    list_display = ["id", "nombre", "coordenadas"]
+    search_fields = ["nombre", "coordenadas"]
 
 
 @admin.register(Arbol)

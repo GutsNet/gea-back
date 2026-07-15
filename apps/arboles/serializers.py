@@ -18,7 +18,7 @@ class UbicacionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Ubicacion
-        fields = ["id", "coordenadas"]
+        fields = ["id", "nombre", "coordenadas"]
 
 
 class ArbolListSerializer(serializers.ModelSerializer):

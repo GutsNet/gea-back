@@ -61,6 +61,12 @@ class Ubicacion(models.Model):
         default=uuid.uuid4,
         editable=False,
     )
+    nombre = models.CharField(
+        "Nombre",
+        max_length=100,
+        unique=True,
+        help_text="Nombre amigable para identificar la ubicación dentro del campus.",
+    )
     coordenadas = models.CharField(
         "Coordenadas",
         max_length=500,
@@ -74,7 +80,7 @@ class Ubicacion(models.Model):
         verbose_name_plural = "Ubicaciones"
 
     def __str__(self):
-        return f"Área {str(self.id)[:8]}"
+        return self.nombre or f"Área {str(self.id)[:8]}"
 
 
 class Arbol(TimestampMixin, models.Model):

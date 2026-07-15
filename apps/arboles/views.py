@@ -43,7 +43,7 @@ class UbicacionViewSet(viewsets.ModelViewSet):
 
     queryset = Ubicacion.objects.all()
     serializer_class = UbicacionSerializer
-    search_fields = ["coordenadas"]
+    search_fields = ["nombre", "coordenadas"]
 
     def get_permissions(self):
         if self.action in ("create", "update", "partial_update", "destroy"):
