@@ -26,7 +26,7 @@ class UbicacionAdmin(admin.ModelAdmin):
 
 @admin.register(Arbol)
 class ArbolAdmin(admin.ModelAdmin):
-    list_display = ["etiqueta", "especie", "id_area", "nivel_infestacion", "estado", "fecha_reporte"]
+    list_display = ["etiqueta", "especie", "id_area", "coordenadas", "nivel_infestacion", "estado", "fecha_reporte"]
     list_filter = ["estado", "especie"]
-    search_fields = ["etiqueta"]
+    search_fields = ["etiqueta", "coordenadas"]
     readonly_fields = ["created_at", "updated_at"]

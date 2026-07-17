@@ -1,9 +1,3 @@
-"""
-G.E.A. Backend
-Autor: Gael Landa
-Proyecto: G.E.A. (Gestión Ecológica Arbórea)
-"""
-
 import pytest
 from rest_framework.test import APIRequestFactory
 
@@ -41,6 +35,7 @@ class TestSolicitudCreateSerializer:
                 "arbol_existente": None,
                 "nueva_etiqueta": "ARB-TEST-001",
                 "id_area": ubicacion.id,
+                "coordenadas_exactas": "19.5466,-99.4568",
                 "n1": 2.5,
                 "n2": 2.0,
                 "n3": 1.5,
@@ -57,5 +52,7 @@ class TestSolicitudCreateSerializer:
         instance = serializer.save()
 
         assert instance.id is not None
+        assert instance.coordenadas_exactas == "19.5466,-99.4568"
         assert "id" in serializer.data
         assert serializer.data["id"] == str(instance.id)
+        assert serializer.data["coordenadas_exactas"] == "19.5466,-99.4568"

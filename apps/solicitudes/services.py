@@ -48,6 +48,7 @@ def aceptar_solicitud(solicitud, admin):
         arbol = Arbol.objects.create(
             especie=especie,
             id_area=solicitud.id_area,
+            coordenadas=solicitud.coordenadas_exactas,
             etiqueta=solicitud.nueva_etiqueta,
             nivel_infestacion=solicitud.nivel_infestacion_promedio,
             estado=_calcular_estado(solicitud.nivel_infestacion_promedio),

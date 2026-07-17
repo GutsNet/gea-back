@@ -39,6 +39,7 @@ class SolicitudCreateSerializer(serializers.ModelSerializer):
             "arbol_existente",
             "nueva_etiqueta",
             "id_area",
+            "coordenadas_exactas",
             # Mediciones
             "n1",
             "n2",
@@ -57,6 +58,7 @@ class SolicitudCreateSerializer(serializers.ModelSerializer):
         nueva_etiqueta = data.get("nueva_etiqueta", "")
         especie_existente = data.get("especie_existente")
         nueva_especie = data.get("nueva_especie_nombre", "")
+        coordenadas_exactas = self.initial_data.get("coordenadas_exactas", "")
 
         # Si el árbol ya existe, no necesitamos validar especie
         if arbol_existente:
@@ -67,6 +69,10 @@ class SolicitudCreateSerializer(serializers.ModelSerializer):
             if not data.get("id_area"):
                 raise serializers.ValidationError(
                     {"id_area": "Se requiere una ubicación para un árbol nuevo."}
+                )
+            if not coordenadas_exactas.strip():
+                raise serializers.ValidationError(
+                    {"coordenadas_exactas": "Se requieren coordenadas exactas para un árbol nuevo."}
                 )
             if not especie_existente and not nueva_especie:
                 raise serializers.ValidationError(
@@ -145,6 +151,7 @@ class SolicitudDetailSerializer(serializers.ModelSerializer):
             "arbol_existente",
             "nueva_etiqueta",
             "id_area",
+            "coordenadas_exactas",
             "es_arbol_nuevo",
             # Mediciones
             "n1",

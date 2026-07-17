@@ -113,6 +113,13 @@ class Solicitud(models.Model):
         related_name="solicitudes",
         verbose_name="Ubicación del nuevo árbol",
     )
+    coordenadas_exactas = models.CharField(
+        "Coordenadas exactas del árbol",
+        max_length=500,
+        blank=True,
+        default="",
+        help_text="Punto exacto del árbol en formato lat,long o x,y.",
+    )
 
     # ── Mediciones Hawksworth ────────────────────────
     n1 = models.FloatField(

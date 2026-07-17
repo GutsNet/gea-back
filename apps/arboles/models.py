@@ -120,6 +120,13 @@ class Arbol(TimestampMixin, models.Model):
         related_name="arboles",
         verbose_name="Ubicación",
     )
+    coordenadas = models.CharField(
+        "Coordenadas exactas",
+        max_length=500,
+        blank=True,
+        default="",
+        help_text="Punto exacto del árbol en formato lat,long o x,y.",
+    )
     etiqueta = models.CharField(
         "Etiqueta",
         max_length=50,
