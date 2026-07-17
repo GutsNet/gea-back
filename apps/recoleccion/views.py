@@ -9,7 +9,7 @@ Proyecto: G.E.A. (Gestión Ecológica Arbórea)
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 
-from apps.core.permissions import IsOwnerOrAdministrativo
+from apps.core.permissions import IsOwnerOrAdministrativo, IsAdministrativo
 
 from .models import Recoleccion
 from .serializers import RecoleccionSerializer
@@ -29,8 +29,8 @@ class RecoleccionViewSet(viewsets.ModelViewSet):
     ordering_fields = ["fecha", "kilos"]
 
     def get_permissions(self):
-        if self.action in ("update", "partial_update", "destroy"):
-            return [IsAuthenticated(), IsOwnerOrAdministrativo()]
+        if self.action in ("create", "update", "partial_update", "destroy"):
+            return [IsAuthenticated(), IsAdministrativo()]
         return [IsAuthenticated()]
 
     def get_queryset(self):

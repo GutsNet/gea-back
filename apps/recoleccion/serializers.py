@@ -25,8 +25,11 @@ class RecoleccionSerializer(serializers.ModelSerializer):
             "kilos",
             "fecha",
         ]
-        read_only_fields = ["id", "responsable"]
+        read_only_fields = ["id"]
 
-    def create(self, validated_data):
-        validated_data["responsable"] = self.context["request"].user
-        return super().create(validated_data)
+    def validate_responsable(self, usuario):
+        if usuario.rol != "Estudiante":
+            raise serializers.ValidationError(
+                "El responsable de una recolección debe ser un estudiante."
+            )
+        return usuario
