@@ -19,7 +19,7 @@ class TestUsuarioModel:
     def test_crear_usuario(self, estudiante):
         """Verifica que se crea un usuario con los campos correctos."""
         assert estudiante.matricula == "210001"
-        assert estudiante.rol == Usuario.Rol.ESTUDIANTE
+        assert estudiante.rol == Usuario.Rol.USER
         assert estudiante.estatus is True
         assert estudiante.grupo == "9A-ISC"
         assert estudiante.cuatrimestre == 9
@@ -28,7 +28,7 @@ class TestUsuarioModel:
     def test_str_representation(self, estudiante):
         """Verifica la representación string del usuario."""
         assert "210001" in str(estudiante)
-        assert "Estudiante" in str(estudiante)
+        assert "User" in str(estudiante)
 
     def test_rol_properties(self, root_user, administrativo, estudiante):
         """Verifica las propiedades de rol."""
@@ -48,7 +48,7 @@ class TestUsuarioModel:
                 username="otro",
                 matricula="210001",
                 password="testpass123",
-                rol=Usuario.Rol.ESTUDIANTE,
+                rol=Usuario.Rol.USER,
                 grupo="9B-ISC",
                 cuatrimestre=9,
             )

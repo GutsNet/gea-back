@@ -18,7 +18,7 @@ class IsRoot(BasePermission):
         return (
             request.user
             and request.user.is_authenticated
-            and request.user.rol == "Root"
+            and request.user.rol == "root"
         )
 
 
@@ -31,7 +31,7 @@ class IsAdministrativo(BasePermission):
         return (
             request.user
             and request.user.is_authenticated
-            and request.user.rol in ("Administrativo", "Root")
+            and request.user.rol in ("admin", "root")
         )
 
 
@@ -44,7 +44,7 @@ class IsEstudiante(BasePermission):
         return (
             request.user
             and request.user.is_authenticated
-            and request.user.rol in ("Estudiante", "Administrativo", "Root")
+            and request.user.rol in ("user", "admin", "root")
         )
 
 
@@ -57,7 +57,7 @@ class IsOwnerOrAdministrativo(BasePermission):
     message = "Solo puedes acceder a tus propios recursos o ser administrativo."
 
     def has_object_permission(self, request, view, obj):
-        if request.user.rol in ("Administrativo", "Root"):
+        if request.user.rol in ("admin", "root"):
             return True
 
         # Check common owner fields

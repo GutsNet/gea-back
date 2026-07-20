@@ -31,7 +31,7 @@ def administrativo(db):
         username="admin",
         matricula="ADM-001",
         password="testpass123",
-        rol=Usuario.Rol.ADMINISTRATIVO,
+        rol=Usuario.Rol.ADMIN,
         grupo="N/A",
         cuatrimestre=1,
     )
@@ -44,7 +44,7 @@ def estudiante(db):
         username="estudiante",
         matricula="210001",
         password="testpass123",
-        rol=Usuario.Rol.ESTUDIANTE,
+        rol=Usuario.Rol.USER,
         grupo="9A-ISC",
         cuatrimestre=9,
     )

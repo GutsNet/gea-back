@@ -65,7 +65,7 @@ class SolicitudViewSet(viewsets.ModelViewSet):
         qs = super().get_queryset()
         user = self.request.user
         # Estudiantes solo ven sus propias solicitudes
-        if user.rol == "Estudiante":
+        if user.rol == "user":
             qs = qs.filter(solicitante=user)
         return qs
 

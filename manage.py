@@ -20,3 +20,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+from apps.usuarios.models import Usuario
+
+# Buscar al usuario por la matrícula que acabas de ingresar
+admin = Usuario.objects.get(matricula='1234567890')
+admin.rol = 'Root'
+admin.save()
+exit()

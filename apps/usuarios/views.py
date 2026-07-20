@@ -68,7 +68,7 @@ class UsuarioViewSet(viewsets.ModelViewSet):
 
     Solo accesible por Root. Administrativos pueden listar.
     Soporta filtro por rol para obtener solo estudiantes:
-        GET /api/v1/auth/usuarios/?rol=Estudiante
+        GET /api/v1/auth/usuarios/?rol=user
     """
 
     queryset = Usuario.objects.all()

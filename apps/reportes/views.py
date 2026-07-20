@@ -56,6 +56,6 @@ class ReporteViewSet(
             return qs
 
         # Sin filtro de árbol: estudiantes solo ven los suyos
-        if user.rol == "Estudiante":
+        if user.rol == "user":
             qs = qs.filter(responsable=user)
         return qs

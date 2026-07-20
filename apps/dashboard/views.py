@@ -54,7 +54,7 @@ class ResumenView(APIView):
         kg_total = Recoleccion.objects.aggregate(total=Sum("kilos"))["total"] or 0
 
         estudiantes_activos = Usuario.objects.filter(
-            rol="Estudiante", estatus=True
+            rol="user", estatus=True
         ).count()
 
         return Response(

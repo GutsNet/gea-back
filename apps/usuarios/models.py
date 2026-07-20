@@ -23,15 +23,15 @@ class Usuario(AbstractUser):
     Usuario del sistema G.E.A.
 
     Roles:
-        - Root: Acceso total al sistema.
-        - Administrativo: Valida reportes, gestiona árboles y estudiantes.
-        - Estudiante: Registra reportes y recolecciones (brigadista).
+        - root: Acceso total al sistema.
+        - admin: Valida reportes, gestiona árboles y estudiantes.
+        - user: Registra reportes y recolecciones (brigadista).
     """
 
     class Rol(models.TextChoices):
-        ROOT = "Root", "Root"
-        ADMINISTRATIVO = "Administrativo", "Administrativo"
-        ESTUDIANTE = "Estudiante", "Estudiante"
+        ROOT = "root", "Root"
+        ADMIN = "admin", "Admin"
+        USER = "user", "User"
 
     id = models.UUIDField(
         primary_key=True,
@@ -48,7 +48,7 @@ class Usuario(AbstractUser):
         "Rol",
         max_length=15,
         choices=Rol.choices,
-        default=Rol.ESTUDIANTE,
+        default=Rol.USER,
     )
     grupo = models.CharField(
         "Grupo",
@@ -96,8 +96,8 @@ class Usuario(AbstractUser):
 
     @property
     def es_administrativo(self):
-        return self.rol in (self.Rol.ROOT, self.Rol.ADMINISTRATIVO)
+        return self.rol in (self.Rol.ROOT, self.Rol.ADMIN)
 
     @property
     def es_estudiante(self):
-        return self.rol == self.Rol.ESTUDIANTE
+        return self.rol == self.Rol.USER

@@ -26,7 +26,7 @@ class TestReporteModel:
             username="brigadista",
             matricula="BRI-001",
             password="testpass123",
-            rol=Usuario.Rol.ESTUDIANTE,
+            rol=Usuario.Rol.USER,
             grupo="9A-ISC",
             cuatrimestre=9,
         )

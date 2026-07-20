@@ -36,6 +36,6 @@ class RecoleccionViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         qs = super().get_queryset()
         user = self.request.user
-        if user.rol == "Estudiante":
+        if user.rol == "user":
             qs = qs.filter(responsable=user)
         return qs
